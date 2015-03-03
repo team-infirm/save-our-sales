@@ -1,0 +1,18 @@
+body {
+    background-color: #e0e1dd;
+}
+
+.content {
+    width: 1325px;
+    float: none;
+    margin: 0 auto;
+}
+
+.table {
+  border: 1px solid #C7C9C2;
+}
+
+th, td {
+    background-color: #FFFFFF;
+    border: 1px solid #C7C9C2;
+}

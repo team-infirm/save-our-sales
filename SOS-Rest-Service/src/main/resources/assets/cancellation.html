@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cancellationApp">
+<head>
+    <title>My Sage Pay - Cancellations</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="content">
+    <img src="images/Layer_1.png" alt="" /><img src="images/Layer_2.png" alt="" /><img src="images/Layer_3.png" alt="" />
+    <div ng-controller="CancellationController">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>vendorTxCode</th>
+                <th>amount</th>
+                <th>discount</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="cancellation in cancellations">
+                    <td>{{cancellation.vendorTxCode}}</td>
+                    <td>{{cancellation.amount}}</td>
+                    <td>{{cancellation.discount}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/cancellation.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>
