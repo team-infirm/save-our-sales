@@ -1,6 +1,6 @@
 package com.sagepay.sos.resources;
 
-import com.sagepay.sos.aws.EmailSender;
+import com.sagepay.sos.notifications.EmailSender;
 import com.sagepay.sos.core.ChaserRequest;
 import com.sagepay.sos.core.Cancellation;
 import com.sagepay.sos.db.CancellationsDAO;

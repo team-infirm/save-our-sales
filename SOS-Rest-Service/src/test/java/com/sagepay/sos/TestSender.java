@@ -1,7 +1,7 @@
 package com.sagepay.sos;
 
-import com.sagepay.sos.aws.EmailSender;
-import com.sagepay.sos.aws.SmsSender;
+import com.sagepay.sos.notifications.EmailSender;
+import com.sagepay.sos.notifications.SmsSender;
 import org.apache.commons.mail.EmailException;
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.sagepay.sos.aws;
+package com.sagepay.sos.notifications;
 
 import com.clockworksms.ClockWorkSmsService;
 import com.clockworksms.ClockworkException;

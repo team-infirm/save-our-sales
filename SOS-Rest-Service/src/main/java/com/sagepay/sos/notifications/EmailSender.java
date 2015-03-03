@@ -1,4 +1,4 @@
-package com.sagepay.sos.aws;
+package com.sagepay.sos.notifications;
 
 import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.Email;
