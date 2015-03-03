@@ -8,6 +8,36 @@ public class Cancellation {
     private String transactionId;
     private DateTime executedTime;
     private Integer transactionValue;
+    private String vendorName;
+    private String vendorId;
+    private Boolean hasBeenRecoveredPreviously;
+
+    @JsonProperty
+    public String getVendorName() {
+        return vendorName;
+    }
+
+    public void setVendorName(String vendorName) {
+        this.vendorName = vendorName;
+    }
+
+    @JsonProperty
+    public String getVendorId() {
+        return vendorId;
+    }
+
+    public void setVendorId(String vendorId) {
+        this.vendorId = vendorId;
+    }
+
+    @JsonProperty
+    public Boolean getHasBeenRecoveredPreviously() {
+        return hasBeenRecoveredPreviously;
+    }
+
+    public void setHasBeenRecoveredPreviously(Boolean hasBeenRecoveredPreviously) {
+        this.hasBeenRecoveredPreviously = hasBeenRecoveredPreviously;
+    }
 
     @JsonProperty
     public String getTransactionId() {
