@@ -2,27 +2,17 @@ package com.sagepay.sos.core;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.List;
+
 public class ChaserRequest {
-    private String transactionId;
+    private List<String> transactionIds;
 
     @JsonProperty
-    public RequestType getRequestType() {
-        return requestType;
+    public List<String> getTransactionIds() {
+        return transactionIds;
     }
 
-    public void setRequestType(RequestType requestType) {
-        this.requestType = requestType;
-    }
-
-    private RequestType requestType;
-
-
-    @JsonProperty
-    public String getTransactionId() {
-        return transactionId;
-    }
-
-    public void setTransactionId(String transactionId) {
-        this.transactionId = transactionId;
+    public void setTransactionId(List<String> transactionId) {
+        this.transactionIds = transactionId;
     }
 }

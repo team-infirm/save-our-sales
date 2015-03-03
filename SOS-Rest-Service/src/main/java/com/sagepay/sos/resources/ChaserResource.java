@@ -13,9 +13,10 @@ import javax.ws.rs.core.MediaType;
 public class ChaserResource {
 
     @POST
-    public Cancellation sendChaser(ChaserRequest chaserRequest){
-        //TODO: Send Email from cancellation
-        return null;
+    public void sendChaser(ChaserRequest chaserRequest){
+        for (String id : chaserRequest.getTransactionIds()){
+            System.out.println("Sending email for cancellation with an id of " + id);
+        }
     }
 
 
