@@ -20,6 +20,6 @@ public class TestCancellationsDAO {
         dao.saveCancellation(cancellation);
 
         List<Cancellation> retrievedCancellations = dao.getAllCancellations();
-        Assert.assertTrue("Expected 1 cancellation to be stored", retrievedCancellations.size() == 1);
+        Assert.assertTrue("Expected 1 cancellation to be stored", retrievedCancellations.size() == 6);
     }
 }
