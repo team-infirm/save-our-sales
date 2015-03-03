@@ -31,4 +31,8 @@ public class CancellationsDAO {
     public List<Cancellation> getAllCancellations(){
         return new ArrayList<Cancellation>(cancellations.values());
     }
+
+    public Cancellation getCancellation(String id) {
+        return cancellations.get(id);
+    }
 }

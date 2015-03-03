@@ -24,7 +24,7 @@ public class TransactionApplication extends Application<TransactionApplicationCo
     public void run(TransactionApplicationConfiguration transactionApplicationConfiguration, Environment environment) throws Exception {
         environment.healthChecks().register("Blank Health Check", new BasicHealthCheck());
         CancellationsDAO cancellationsDAO = new CancellationsDAO();
-        environment.jersey().register(new ChaserResource());
+        environment.jersey().register(new ChaserResource(cancellationsDAO));
         environment.jersey().register(new CancellationResource(cancellationsDAO));
         environment.jersey().register(new CancellationsResource(cancellationsDAO));
         environment.jersey().setUrlPattern("/api/*");
