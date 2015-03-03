@@ -20,6 +20,7 @@ public class CancellationsDAO {
             c.setHasBeenRecoveredPreviously(i%2==0 ? true : false);
             c.setVendorId("Vendor" + i);
             c.setVendorName("Vendor" + i);
+            c.setCustomerEmail("chris.rutter@sagepay.com");
             cancellations.put(c.getTransactionId(), c);
         }
     }
