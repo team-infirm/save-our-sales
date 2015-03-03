@@ -11,6 +11,7 @@ public class Cancellation {
     private String vendorName;
     private String vendorId;
     private Boolean hasBeenRecoveredPreviously;
+    private String customerEmail;
 
     @JsonProperty
     public String getVendorName() {
@@ -64,5 +65,14 @@ public class Cancellation {
 
     public void setTransactionValue(Integer transactionValue) {
         this.transactionValue = transactionValue;
+    }
+
+    @JsonProperty
+    public String getCustomerEmail() {
+        return customerEmail;
+    }
+
+    public void setCustomerEmail(String customerEmail) {
+        this.customerEmail = customerEmail;
     }
 }
