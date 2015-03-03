@@ -3,6 +3,7 @@ package com.sagepay.sos.resources;
 import com.sagepay.sos.core.ChaserRequest;
 import com.sagepay.sos.core.Cancellation;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -18,7 +19,4 @@ public class ChaserResource {
             System.out.println("Sending email for cancellation with an id of " + id);
         }
     }
-
-
-
 }

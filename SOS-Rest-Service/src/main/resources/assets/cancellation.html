@@ -9,22 +9,28 @@
 <div class="content">
     <img src="images/Layer_1.png" alt="" /><img src="images/Layer_2.png" alt="" /><img src="images/Layer_3.png" alt="" />
     <div ng-controller="CancellationController">
-        <table class="table table-hover">
-            <thead>
-            <tr>
-                <th>vendorTxCode</th>
-                <th>amount</th>
-                <th>discount</th>
-            </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="cancellation in cancellations">
-                    <td>{{cancellation.transactionId}}</td>
-                    <td>{{cancellation.executedTime}}</td>
-                    <td>{{cancellation.transactionValue}}</td>
+        <form ng-submit="saveCancellations()">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>vendorTxCode</th>
+                    <th>amount</th>
+                    <th>discount</th>
+                    <th>Save this sale</th>
                 </tr>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="cancellation in cancellations">
+                        <td>{{cancellation.transactionId}}</td>
+                        <td>{{cancellation.executedTime}}</td>
+                        <td>{{cancellation.transactionValue}}</td>
+                        <td><input type="checkbox" ng-model="cancellation.sendEmail"> </td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" class="btn btn-default btn-lg" value="Save Cancellations">
+        </form>
+        <pre>{{cancellations|json}}</pre>
     </div>
 </div>
 <script type="text/javascript" src="js/angular.min.js"></script>

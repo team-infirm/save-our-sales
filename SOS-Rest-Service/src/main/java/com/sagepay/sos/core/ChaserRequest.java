@@ -5,9 +5,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 public class ChaserRequest {
-    private List<String> transactionIds;
 
     @JsonProperty
+    private List<String> transactionIds;
+
     public List<String> getTransactionIds() {
         return transactionIds;
     }
