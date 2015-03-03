@@ -12,7 +12,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class AESCryptoUtils {
 
-    public String encryptToSagepayStandard(String digest, String encryptionPassword) throws Exception {
+    public static String encryptToSagepayStandard(String digest, String encryptionPassword) throws Exception {
         byte[] val = null;
         try {
             val = CryptographyHelper.AESEncrypt(digest, "ISO-8859-1", encryptionPassword);
