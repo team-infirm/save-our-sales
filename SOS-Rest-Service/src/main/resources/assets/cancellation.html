@@ -19,9 +19,9 @@
             </thead>
             <tbody>
                 <tr ng-repeat="cancellation in cancellations">
-                    <td>{{cancellation.vendorTxCode}}</td>
-                    <td>{{cancellation.amount}}</td>
-                    <td>{{cancellation.discount}}</td>
+                    <td>{{cancellation.transactionId}}</td>
+                    <td>{{cancellation.executedTime}}</td>
+                    <td>{{cancellation.transactionValue}}</td>
                 </tr>
             </tbody>
         </table>
@@ -29,6 +29,7 @@
 </div>
 <script type="text/javascript" src="js/angular.min.js"></script>
 <script type="text/javascript" src="js/cancellation.js"></script>
+<script type="text/javascript" src="js/angular-resource.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>

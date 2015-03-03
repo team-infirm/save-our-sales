@@ -1,10 +1,11 @@
-var cancellationApp = angular.module('cancellationApp', {});
+var cancellationApp = angular.module('cancellationApp', ['ngResource']);
 
-cancellationApp.controller('CancellationController', function ($scope) {
-    $scope.cancellations = [
-        {vendorTxCode: 'njksncjnjn111', amount: '10.50', discount: '0'},
-        {vendorTxCode: 'njksncjnjn222', amount: '20.50', discount: '0'},
-        {vendorTxCode: 'njksncjnjn333', amount: '30.50', discount: '0'},
-        {vendorTxCode: 'njksncjnjn444', amount: '40.50', discount: '0'}
-    ]
+cancellationApp.factory("GetCancellations", function($resource) {
+  return $resource("/api/cancellations");
+});
+
+cancellationApp.controller('CancellationController', function ($scope, GetCancellations) {
+    GetCancellations.query(function(data) {
+        $scope.cancellations = data;
+      });
 })
