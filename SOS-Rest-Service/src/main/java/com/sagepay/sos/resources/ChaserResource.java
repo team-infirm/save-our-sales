@@ -41,6 +41,9 @@ public class ChaserResource {
                 String registrationLink = FormRegistrationGenerator.createRegistrationLink(cryptString, cancellation.getVendorName());
 
                 EmailSender.sendEmail(cancellation.getCustomerEmail(),"Hi, We noticed you didn't complete your purchase through our on-line store. We hope you didn't encounter difficulties, if you'd like to try again, click the link below. As a gesture of goodwill, we've applied a discount to your original order and the new amount is [XX.XX GBP]. Many Thanks www.webstore.com -> " + registrationLink, "Test");
+                cancellation.setHasBeenRecoveredPreviously(true);
+                cancellationsDao.saveCancellation(cancellation);
+
             } catch (EmailException e) {
                 System.out.println("Failed to send email." + e.getMessage() );
                 System.out.println(e.getStackTrace());

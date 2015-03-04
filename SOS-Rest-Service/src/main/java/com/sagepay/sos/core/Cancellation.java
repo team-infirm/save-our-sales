@@ -13,6 +13,16 @@ public class Cancellation {
     private Boolean hasBeenRecoveredPreviously;
     private String customerEmail;
     private String customerMobileNumber;
+    private Boolean hasBeenSuccessfullyRecovered;
+
+    @JsonProperty
+    public Boolean getHasBeenSuccessfullyRecovered() {
+        return hasBeenSuccessfullyRecovered;
+    }
+
+    public void setHasBeenSuccessfullyRecovered(Boolean hasBeenSuccessfullyRecovered) {
+        this.hasBeenSuccessfullyRecovered = hasBeenSuccessfullyRecovered;
+    }
 
     @JsonProperty
     public String getVendorName() {
