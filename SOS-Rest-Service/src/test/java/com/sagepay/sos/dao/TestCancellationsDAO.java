@@ -15,9 +15,9 @@ public class TestCancellationsDAO implements CancellationsDAO {
     public TestCancellationsDAO(){
         for (int i = 0; i < 5; i++){
             Cancellation c = new Cancellation();
-            c.setExecutedTime(DateTime.now());
+            c.setExecutedTime(DateTime.now().toString());
             c.setTransactionId("{12345" + i + "}");
-            c.setTransactionValue(i * 10);
+            c.setTransactionValue(Integer.toString(i) + ".00");
             c.setHasBeenRecoveredPreviously(i % 2 == 0 ? true : false);
             c.setVendorId("Vendor" + i);
             c.setVendorName("chipbuttysrus");

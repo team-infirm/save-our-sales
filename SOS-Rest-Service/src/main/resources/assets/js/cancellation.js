@@ -16,8 +16,7 @@ cancellationApp.controller('CancellationController', function ($scope, GetCancel
       $scope.saveCancellations = function () {
           var saveRequests = extractSaveRequests($scope.cancellations)
           if (saveRequests != undefined && saveRequests.length != 0) {
-              alert(extractSaveRequests($scope.cancellations));
-              var chaserRequest = {transactionIds: saveRequests}
+              var chaserRequest = {chaserRequests: saveRequests}
               SaveCancellations.save(chaserRequest)
           }
       }
@@ -26,7 +25,12 @@ cancellationApp.controller('CancellationController', function ($scope, GetCancel
 function extractSaveRequests(cancellations) {
     var saveRequests = []
     cancellations.forEach( function(cancellation) {
-        if (cancellation.sendEmail) {saveRequests.push(cancellation.transactionId)}
+        if (cancellation.sendEmail) {saveRequests.push(
+            {
+            id: cancellation.transactionId,
+            amount: cancellation.transactionValue
+            }
+        )}
     });
     return saveRequests;
 }

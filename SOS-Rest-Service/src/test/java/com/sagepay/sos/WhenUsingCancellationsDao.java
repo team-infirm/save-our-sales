@@ -13,9 +13,9 @@ public class WhenUsingCancellationsDao {
     @Test
     public void testStoreAndRetrieve() {
         Cancellation cancellation = new Cancellation();
-        cancellation.setExecutedTime(DateTime.now());
+        cancellation.setExecutedTime(DateTime.now().toString());
         cancellation.setTransactionId("12345");
-        cancellation.setTransactionValue(12345);
+        cancellation.setTransactionValue("12345");
         TestCancellationsDAO dao = new TestCancellationsDAO();
         dao.saveCancellation(cancellation);
 

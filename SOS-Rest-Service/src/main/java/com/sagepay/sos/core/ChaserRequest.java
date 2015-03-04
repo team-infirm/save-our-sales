@@ -7,13 +7,13 @@ import java.util.List;
 public class ChaserRequest {
 
     @JsonProperty
-    private List<String> transactionIds;
+    private List<ChaserRequestContent> chaserRequests;
 
-    public List<String> getTransactionIds() {
-        return transactionIds;
+    public List<ChaserRequestContent> getChaserRequestContents() {
+        return chaserRequests;
     }
 
-    public void setTransactionId(List<String> transactionId) {
-        this.transactionIds = transactionId;
+    public void setChaserRequestContents(List<ChaserRequestContent> transactionId) {
+        this.chaserRequests = transactionId;
     }
 }

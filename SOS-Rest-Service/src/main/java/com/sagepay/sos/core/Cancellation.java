@@ -6,8 +6,8 @@ import org.joda.time.DateTime;
 public class Cancellation {
 
     private String transactionId;
-    private DateTime executedTime;
-    private Integer transactionValue;
+    private String executedTime;
+    private String transactionValue;
     private String vendorName;
     private String vendorId;
     private Boolean hasBeenRecoveredPreviously;
@@ -51,20 +51,20 @@ public class Cancellation {
     }
 
     @JsonProperty
-    public DateTime getExecutedTime() {
+    public String getExecutedTime() {
         return executedTime;
     }
 
-    public void setExecutedTime(DateTime executedTime) {
+    public void setExecutedTime(String executedTime) {
         this.executedTime = executedTime;
     }
 
     @JsonProperty
-    public Integer getTransactionValue() {
+    public String getTransactionValue() {
         return transactionValue;
     }
 
-    public void setTransactionValue(Integer transactionValue) {
+    public void setTransactionValue(String transactionValue) {
         this.transactionValue = transactionValue;
     }
 

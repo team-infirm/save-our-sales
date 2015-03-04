@@ -1,5 +1,6 @@
 package com.sagepay.sos.resources;
 
+import com.sagepay.sos.core.ChaserRequestContent;
 import com.sagepay.sos.db.CancellationsDAO;
 import com.sagepay.sos.gateway.AESCryptoUtils;
 import com.sagepay.sos.gateway.FormRegistrationGenerator;
@@ -28,12 +29,12 @@ public class ChaserResource {
 
     @POST
     public void sendChaser(ChaserRequest chaserRequest){
-        for (String id : chaserRequest.getTransactionIds()){
-            System.out.println("Sending email for cancellation with an id of " + id);
+        for (ChaserRequestContent request : chaserRequest.getChaserRequestContents()){
+            System.out.println("Sending email for cancellation with an id of " + request.getId());
             try{
-                Cancellation cancellation = cancellationsDao.getCancellation(id);
+                Cancellation cancellation = cancellationsDao.getCancellation(request.getId());
 
-                String registration = new FormRegistrationGenerator(cancellation.getVendorName(), cancellation.getTransactionValue().toString()).
+                String registration = new FormRegistrationGenerator(cancellation.getVendorName(), request.getAmount()).
                         generateRegistrationString(randomNumber());
                 String cryptString = AESCryptoUtils.encryptToSagepayStandard(registration, "4X4CauKt56wYcM2M");
 

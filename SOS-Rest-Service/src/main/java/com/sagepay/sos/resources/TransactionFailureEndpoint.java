@@ -28,7 +28,8 @@ public class TransactionFailureEndpoint {
         Map<String, String> paramMap = getQueryParamMap(queryParams);
         String vendorId = paramMap.get("vendorId");
         String vendorName = paramMap.get("vendorName");
-        registerCancellation(customerMobileNumber, customerEmailAddress, vendorId, vendorName);
+        String amount = paramMap.get("amount");
+        registerCancellation(customerMobileNumber, customerEmailAddress, vendorId, vendorName, amount);
     }
 
     private static Map<String, String> getQueryParamMap(String queryParams){
@@ -41,15 +42,16 @@ public class TransactionFailureEndpoint {
         }
         return map;
     }
-    private void registerCancellation(String customerMobileNumber, String customerEmailAddress, String vendorId, String vendorName) {
+
+    private void registerCancellation(String customerMobileNumber, String customerEmailAddress, String vendorId, String vendorName, String amount) {
         Cancellation c = new Cancellation();
         c.setCustomerEmail(customerEmailAddress);
         c.setCustomerMobileNumber(customerMobileNumber);
-        c.setExecutedTime(DateTime.now());
+        c.setExecutedTime(DateTime.now().toString());
         c.setHasBeenRecoveredPreviously(false);
-        c.setTransactionValue(0);
+        c.setTransactionValue(amount);
         c.setVendorId("123456");
-        c.setVendorName("TestVendorName");
+        c.setVendorName("chipbuttysrus");
         cancellationDAO.saveCancellation(c);
     }
 }
