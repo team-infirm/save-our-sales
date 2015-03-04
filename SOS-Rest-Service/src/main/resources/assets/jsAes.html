@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js"></script>
+	<script src="js/jsAes.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+	<meta name="ProgId" content="FrontPage.Editor.Document">
+	<title>Sagepay AES Encryption Tool Example</title>
+</head>
+
+<body>
+
+<form id="registrationForm" action="https://test.sagepay.com/gateway/service/vspform-register.vsp">
+	
+	<input type="hidden" name="VPSProtocol" value="3.00">
+	<input type="hidden" name="TxType" value="PAYMENT">
+	<input type="hidden" name="Vendor" value="chipbuttysrus">
+	<input type="hidden" name="Crypt" id="registrationCryptString" value="">
+		
+	<label>email</label>
+	<input type="text" name="emailAddress" id="emailAddress">
+	<br />
+	<label>amount</label>
+	<input type="text" name="amount" id="amount">
+	<br />
+	<label>phone number</label>
+	<input type="text" name="phoneNumber" id="phoneNumber">
+	<br />
+	<input type="button" value="REGISTER" onclick="SagePay.registerTransaction();">
+</form>
+	
+</body>
+
+</html>
