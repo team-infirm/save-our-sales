@@ -7,7 +7,17 @@
 </head>
 <body>
 <div class="content">
-    <img src="images/Layer_1.png" alt="" /><img src="images/Layer_2.png" alt="" /><img src="images/Layer_3.png" alt="" />
+    <img src="images/Layer_1.png" alt="" />
+    <img src="images/Layer_2.png" alt="" />
+    
+    <div class="tile-container">
+        <div class="spacer"></div>
+        <div class="tile green-tile"></div>
+        <div class="spacer"></div>
+        <div class="tile orange-tile"></div>
+        <div class="spacer"></div>
+        <div class="tile grey-tile"></div>
+    </div>
     <div ng-controller="CancellationController">
         <form ng-submit="saveCancellations()">
             <table class="table table-hover">

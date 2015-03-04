@@ -16,3 +16,32 @@ th, td {
     background-color: #FFFFFF;
     border: 1px solid #C7C9C2;
 }
+
+.tile{
+    width:400px;
+    height:120px;
+    display: table-cell;
+    width: 30%;
+    padding-left: 10px;
+    padding-right: 30px;
+}
+
+.spacer{
+    width: 3%;
+    display: table-cell;
+
+}
+
+.tile-container{
+    display: table;
+    width: 1200px;
+}
+.orange-tile {
+    background-color: #FF5800;
+}
+.green-tile{
+    background-color: #41A940;
+}
+.grey-tile{
+    background-color: #4D4F53;
+}

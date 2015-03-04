@@ -23,4 +23,5 @@ public class CancellationsResource {
     public List<Cancellation> getAllCancellations(){
         return dao.getAllCancellations();
     }
+
 }
