@@ -5,6 +5,7 @@ import com.sagepay.sos.db.MapCancellationsDAO;
 import com.sagepay.sos.health.BasicHealthCheck;
 import com.sagepay.sos.resources.CancellationsResource;
 import com.sagepay.sos.resources.ChaserResource;
+import com.sagepay.sos.resources.TransactionFailureEndpoint;
 import io.dropwizard.Application;
 import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.setup.Bootstrap;
@@ -26,6 +27,7 @@ public class TransactionApplication extends Application<TransactionApplicationCo
         CancellationsDAO cancellationsDAO = new MapCancellationsDAO();
         environment.jersey().register(new ChaserResource(cancellationsDAO));
         environment.jersey().register(new CancellationsResource(cancellationsDAO));
+        environment.jersey().register(new TransactionFailureEndpoint(cancellationsDAO));
         environment.jersey().setUrlPattern("/api/*");
     }
 }
