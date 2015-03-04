@@ -25,6 +25,7 @@
                 <tr>
                     <th>VendorTxCode</th>
                     <th>Transaction Date / Time</th>
+                    <th>Customer Email</th>
                     <th>Amount</th>
                     <th>Save this sale</th>
                 </tr>
@@ -33,6 +34,7 @@
                     <tr ng-repeat="cancellation in cancellations">
                         <td>{{cancellation.transactionId}}</td>
                         <td>{{cancellation.executedTime}}</td>
+                        <td>{{cancellation.customerEmail}}</td>
                         <td><input type="text" ng-model="cancellation.transactionValue"></td>
                         <td><input type="checkbox" ng-model="cancellation.sendEmail"></td>
                     </tr>
