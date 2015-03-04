@@ -3,7 +3,7 @@ body {
 }
 
 .content {
-    width: 1325px;
+    width: 1320px;
     float: none;
     margin: 0 auto;
 }
@@ -34,7 +34,7 @@ th, td {
 
 .tile-container{
     display: table;
-    width: 1200px;
+    width: 1320px;
 }
 .orange-tile {
     background-color: #FF5800;
