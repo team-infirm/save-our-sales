@@ -23,12 +23,13 @@ public class TransactionFailureEndpoint {
     }
 
     @GET
-    public void registerFailedTransaction(@QueryParam("crypt") String cryptString, @QueryParam("customerMobileNumber") String customerMobileNumber, @QueryParam("customerEmailAddress") String customerEmailAddress) throws Exception {
+    public String registerFailedTransaction(@QueryParam("crypt") String cryptString, @QueryParam("customerMobileNumber") String customerMobileNumber, @QueryParam("customerEmailAddress") String customerEmailAddress) throws Exception {
         String queryParams = AESCryptoUtils.decryptCryptString(cryptString, HARDCODED_VENDOR_PASSWORD);
         Map<String, String> paramMap = getQueryParamMap(queryParams);
         String vpsTxId = paramMap.get("VPSTxId");
         String amount = paramMap.get("Amount");
         registerCancellation(customerMobileNumber, customerEmailAddress, amount, vpsTxId);
+        return "Shame you cancelled your transaction....:-(";
     }
 
     private static Map<String, String> getQueryParamMap(String queryParams){
