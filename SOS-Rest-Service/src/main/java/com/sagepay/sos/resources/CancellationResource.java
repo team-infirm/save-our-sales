@@ -2,6 +2,7 @@ package com.sagepay.sos.resources;
 
 import com.sagepay.sos.core.Cancellation;
 import com.sagepay.sos.db.CancellationsDAO;
+import com.sagepay.sos.db.MapCancellationsDAO;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;

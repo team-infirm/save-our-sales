@@ -1,6 +1,7 @@
 package com.sagepay.sos;
 
 import com.sagepay.sos.db.CancellationsDAO;
+import com.sagepay.sos.db.MapCancellationsDAO;
 import com.sagepay.sos.health.BasicHealthCheck;
 import com.sagepay.sos.resources.CancellationResource;
 import com.sagepay.sos.resources.CancellationsResource;
@@ -23,7 +24,7 @@ public class TransactionApplication extends Application<TransactionApplicationCo
     @Override
     public void run(TransactionApplicationConfiguration transactionApplicationConfiguration, Environment environment) throws Exception {
         environment.healthChecks().register("Blank Health Check", new BasicHealthCheck());
-        CancellationsDAO cancellationsDAO = new CancellationsDAO();
+        CancellationsDAO cancellationsDAO = new MapCancellationsDAO();
         environment.jersey().register(new ChaserResource(cancellationsDAO));
         environment.jersey().register(new CancellationResource(cancellationsDAO));
         environment.jersey().register(new CancellationsResource(cancellationsDAO));

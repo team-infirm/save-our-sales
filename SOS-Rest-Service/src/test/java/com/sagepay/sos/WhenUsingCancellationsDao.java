@@ -1,14 +1,14 @@
 package com.sagepay.sos;
 
 import com.sagepay.sos.core.Cancellation;
-import com.sagepay.sos.db.CancellationsDAO;
+import com.sagepay.sos.dao.TestCancellationsDAO;
 import org.joda.time.DateTime;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
 
-public class TestCancellationsDAO {
+public class WhenUsingCancellationsDao {
 
     @Test
     public void testStoreAndRetrieve() {
@@ -16,7 +16,7 @@ public class TestCancellationsDAO {
         cancellation.setExecutedTime(DateTime.now());
         cancellation.setTransactionId("12345");
         cancellation.setTransactionValue(12345);
-        CancellationsDAO dao = new CancellationsDAO();
+        TestCancellationsDAO dao = new TestCancellationsDAO();
         dao.saveCancellation(cancellation);
 
         List<Cancellation> retrievedCancellations = dao.getAllCancellations();

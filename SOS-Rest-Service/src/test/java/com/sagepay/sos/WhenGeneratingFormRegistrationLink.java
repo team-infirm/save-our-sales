@@ -65,6 +65,7 @@ public class WhenGeneratingFormRegistrationLink {
         assertEquals(expectedRegistrationLink, actualRegistrationLink);
     }
 
+    @Test
     public void canDecryptCryptStringGivenSomeData() throws Exception {
         String inputDigest = "field1=value1&field2=value2";
         String encryptionPassword = "4X4CauKt56wYcM2M";
