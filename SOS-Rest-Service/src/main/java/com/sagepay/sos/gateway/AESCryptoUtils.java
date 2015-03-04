@@ -24,4 +24,17 @@ public class AESCryptoUtils {
         }
         return "@" + CryptographyHelper.asHex(val).toUpperCase();
     }
+
+    public static String decryptCryptString(String encryptedString, String encryptionPassword) throws Exception {
+        byte[] val = CryptographyHelper.packHexToBytes(encryptedString.substring(1));
+        String decryptedString;
+        try {
+            decryptedString = CryptographyHelper.asHex(CryptographyHelper.AESDecrypt(val, encryptionPassword));
+        } catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException
+                |IllegalBlockSizeException | BadPaddingException | InvalidAlgorithmParameterException
+                e) {
+            throw new Exception(e);
+        }
+        return CryptographyHelper.packHexToString(decryptedString, "ISO-8859-1");
+    }
 }

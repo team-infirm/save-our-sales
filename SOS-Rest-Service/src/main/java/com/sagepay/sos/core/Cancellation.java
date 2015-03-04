@@ -12,6 +12,7 @@ public class Cancellation {
     private String vendorId;
     private Boolean hasBeenRecoveredPreviously;
     private String customerEmail;
+    private String customerMobileNumber;
 
     @JsonProperty
     public String getVendorName() {
@@ -74,5 +75,13 @@ public class Cancellation {
 
     public void setCustomerEmail(String customerEmail) {
         this.customerEmail = customerEmail;
+    }
+
+    public void setCustomerMobileNumber(String customerMobileNumber) {
+        this.customerMobileNumber = customerMobileNumber;
+    }
+
+    public String getCustomerMobileNumber() {
+        return customerMobileNumber;
     }
 }
