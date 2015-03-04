@@ -26,10 +26,9 @@ public class TransactionFailureEndpoint {
     public void registerFailedTransaction(@QueryParam("crypt") String cryptString, @QueryParam("customerMobileNumber") String customerMobileNumber, @QueryParam("customerEmailAddress") String customerEmailAddress) throws Exception {
         String queryParams = AESCryptoUtils.decryptCryptString(cryptString, HARDCODED_VENDOR_PASSWORD);
         Map<String, String> paramMap = getQueryParamMap(queryParams);
-        String vendorId = paramMap.get("vendorId");
-        String vendorName = paramMap.get("vendorName");
-        String amount = paramMap.get("amount");
-        registerCancellation(customerMobileNumber, customerEmailAddress, vendorId, vendorName, amount);
+        String vpsTxId = paramMap.get("VPSTxId");
+        String amount = paramMap.get("Amount");
+        registerCancellation(customerMobileNumber, customerEmailAddress, amount, vpsTxId);
     }
 
     private static Map<String, String> getQueryParamMap(String queryParams){
@@ -43,7 +42,7 @@ public class TransactionFailureEndpoint {
         return map;
     }
 
-    private void registerCancellation(String customerMobileNumber, String customerEmailAddress, String vendorId, String vendorName, String amount) {
+    private void registerCancellation(String customerMobileNumber, String customerEmailAddress, String amount, String vpsTxId) {
         Cancellation c = new Cancellation();
         c.setCustomerEmail(customerEmailAddress);
         c.setCustomerMobileNumber(customerMobileNumber);
@@ -52,6 +51,7 @@ public class TransactionFailureEndpoint {
         c.setTransactionValue(amount);
         c.setVendorId("123456");
         c.setVendorName("chipbuttysrus");
+        c.setTransactionId(vpsTxId);
         cancellationDAO.saveCancellation(c);
     }
 }
