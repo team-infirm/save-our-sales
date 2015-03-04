@@ -41,8 +41,8 @@ public class ChaserResource {
 
                 String registrationLink = FormRegistrationGenerator.createRegistrationLink(cryptString, cancellation.getVendorName());
 
-                EmailSender.sendEmail(cancellation.getCustomerEmail(),"Hi, We noticed you didn't complete your purchase through our on-line store. We hope you didn't encounter difficulties, if you'd like to try again, click the link below. As a gesture of goodwill, we've applied a discount to your original order and the new amount is [" + request.getAmount() + " GBP]. Many Thanks www.webstore.com -> " + registrationLink, "Test");
-                SmsSender.sendSMS(cancellation.getCustomerMobileNumber(), "Please come back and buy with us...");
+                EmailSender.sendEmail(cancellation.getCustomerEmail(),"Hi, We noticed you didn't complete your purchase through our on-line store. We hope you didn't encounter difficulties, if you'd like to try again, click the link below. As a gesture of goodwill, we've applied a discount to your original order and the new amount is [" + request.getAmount() + " GBP]. Many Thanks www.webstore.com -> " + registrationLink, "Your attempted order from Chip Butties R Us...");
+              //  SmsSender.sendSMS(cancellation.getCustomerMobileNumber(), "Please come back and buy with us...");
                 cancellation.setHasBeenRecoveredPreviously(true);
                 cancellationsDao.saveCancellation(cancellation);
 
